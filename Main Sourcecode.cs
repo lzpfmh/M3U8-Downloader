@@ -130,9 +130,15 @@ namespace M3U8_Downloader
                 + Convert.ToDouble(label5.Text.Substring(11, 2)) + Convert.ToDouble(label5.Text.Substring(14, 2)) / 100);
                 Double Downloaded = Convert.ToDouble(Convert.ToDouble(label6.Text.Substring(5, 2)) * 60 * 60 + Convert.ToDouble(label6.Text.Substring(8, 2)) * 60
                 + Convert.ToDouble(label6.Text.Substring(11, 2)) + Convert.ToDouble(label6.Text.Substring(14, 2)) / 100);
-                
+
                 Double Progress = (Downloaded / All) * 100;
-                ProgressBar.Value = Convert.ToInt32(Progress);
+
+                if (Progress > 100)  //防止进度条超过百分之百
+                {
+                    Progress = 100;
+                }
+                ProgressBar.Value = Convert.ToInt32(Progress); 
+
                 this.Text = "M3U8 Downloader  by：nilaoda [0.1.0]" +  "     已完成：" + String.Format("{0:F}", Progress) + "%";
             }
             
@@ -210,7 +216,7 @@ namespace M3U8_Downloader
             }
         }
 
-        private void 解析工具ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void 嗅探工具ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Exist_Run(@"Tools\HttpFileMonitor.exe");
         }
@@ -338,7 +344,7 @@ namespace M3U8_Downloader
                 button_Download.ForeColor = Color.Black;
                 button_Quit.BackColor = Color.FromArgb(204, 204, 204);
                 button_Quit.ForeColor = Color.Black;
-                解析工具ToolStripMenuItem.ForeColor = Color.Black;
+                嗅探工具ToolStripMenuItem.ForeColor = Color.Black;
                 视频转码ToolStripMenuItem.ForeColor = Color.Black;
                 生成日志ToolStripMenuItem.ForeColor = Color.Black;
                 换肤ToolStripMenuItem1.ForeColor = Color.Black;
@@ -379,7 +385,7 @@ namespace M3U8_Downloader
                 button_Download.ForeColor = Color.FromArgb(245, 245, 245);
                 button_Quit.BackColor = Color.FromArgb(102, 102, 102);
                 button_Quit.ForeColor = Color.FromArgb(245, 245, 245);
-                解析工具ToolStripMenuItem.ForeColor = Color.FromArgb(245, 245, 245);
+                嗅探工具ToolStripMenuItem.ForeColor = Color.FromArgb(245, 245, 245);
                 视频转码ToolStripMenuItem.ForeColor = Color.FromArgb(245, 245, 245);
                 生成日志ToolStripMenuItem.ForeColor = Color.FromArgb(245, 245, 245);
                 换肤ToolStripMenuItem1.ForeColor = Color.FromArgb(245, 245, 245);
