@@ -426,26 +426,26 @@ namespace M3U8_Downloader
             if (radioButton1.Checked == true)
             {
                 houzhui.Text = ".mp4";
-                Command.Text = "-threads 1 -i " + "\"" + textBox_Adress.Text + "\"" + " -c copy -y -bsf:a aac_adtstoasc " + "\"" + textBox_DownloadPath.Text + "\\" + textBox_Name.Text + ".mp4" + "\"";
+                Command.Text = " -i " + "\"" + textBox_Adress.Text + "\"" + " -c copy -y -bsf:a aac_adtstoasc " + "\"" + textBox_DownloadPath.Text + "\\" + textBox_Name.Text + ".mp4" + "\"";
                 // 启动进程执行相应命令,此例中以执行ffmpeg.exe为例  
                 RealAction("Tools\\ffmpeg.exe", Command.Text);
             }
             if (radioButton2.Checked == true)
             {
                 houzhui.Text = ".mkv";
-                Command.Text = "-threads 1 -i " + "\"" + textBox_Adress.Text + "\"" + " -c copy -y -bsf:a aac_adtstoasc " + "\"" + textBox_DownloadPath.Text + "\\" + textBox_Name.Text + ".mkv" + "\"";
+                Command.Text = " -i " + "\"" + textBox_Adress.Text + "\"" + " -c copy -y -bsf:a aac_adtstoasc " + "\"" + textBox_DownloadPath.Text + "\\" + textBox_Name.Text + ".mkv" + "\"";
                 RealAction("Tools\\ffmpeg.exe", Command.Text);
             }
             if (radioButton3.Checked == true)
             {
                 houzhui.Text = ".ts";
-                Command.Text = "-threads 1 -i " + "\"" + textBox_Adress.Text + "\"" + " -c copy -y -f mpegts " + "\"" + textBox_DownloadPath.Text + "\\" + textBox_Name.Text + ".ts" + "\"";
+                Command.Text = " -i " + "\"" + textBox_Adress.Text + "\"" + " -c copy -y -f mpegts " + "\"" + textBox_DownloadPath.Text + "\\" + textBox_Name.Text + ".ts" + "\"";
                 RealAction("Tools\\ffmpeg.exe", Command.Text);
             }
             if (radioButton4.Checked == true)
             {
                 houzhui.Text = ".flv";
-                Command.Text = "-threads 1 -i " + "\"" + textBox_Adress.Text + "\"" + " -c copy -y -f f4v -bsf:a aac_adtstoasc " + "\"" + textBox_DownloadPath.Text + "\\" + textBox_Name.Text + ".flv" + "\"";
+                Command.Text = " -i " + "\"" + textBox_Adress.Text + "\"" + " -c copy -y -f f4v -bsf:a aac_adtstoasc " + "\"" + textBox_DownloadPath.Text + "\\" + textBox_Name.Text + ".flv" + "\"";
                 RealAction("Tools\\ffmpeg.exe", Command.Text);
             }
         }
