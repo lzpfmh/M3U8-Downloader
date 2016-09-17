@@ -139,7 +139,7 @@ namespace M3U8_Downloader
                 }
                 ProgressBar.Value = Convert.ToInt32(Progress); 
 
-                this.Text = "M3U8 Downloader  by：nilaoda [0.1.0]" +  "     已完成：" + String.Format("{0:F}", Progress) + "%";
+                this.Text = "M3U8 Downloader  by：nilaoda [0.1.1]" +  "     已完成：" + String.Format("{0:F}", Progress) + "%";
             }
             
         }
